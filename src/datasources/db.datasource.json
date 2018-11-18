@@ -1,0 +1,10 @@
+{
+  "name": "db",
+  "connector": "mongodb",
+  "url": "\"mongodb://localhost:27020/taskcontrolldb",
+  "host": "localhost",
+  "port": 27020,
+  "user": "taskcontroll",
+  "password": "taskcontroll",
+  "database": "taskcontrolldb"
+}
