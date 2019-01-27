@@ -1,9 +1,9 @@
 {
   "name": "db",
   "connector": "mongodb",
-  "url": "\"mongodb://localhost:27020/taskcontrolldb",
+  "url": "mongodb://localhost:27017/taskcontrolldb",
   "host": "localhost",
-  "port": 27020,
+  "port": 27017,
   "user": "taskcontroll",
   "password": "taskcontroll",
   "database": "taskcontrolldb"

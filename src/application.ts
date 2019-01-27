@@ -4,11 +4,12 @@ import {
   RestExplorerBindings,
   RestExplorerComponent,
 } from '@loopback/rest-explorer';
-import {RestApplication} from '@loopback/rest';
+import {RestApplication, RestServer} from '@loopback/rest';
 import * as path from 'path';
 import {MySequence} from './sequence';
+import {RepositoryMixin, Class, Repository, juggler} from '@loopback/repository';
 
-export class TaskControlServerApplication extends BootMixin(RestApplication) {
+export class TaskControlServerApplication extends BootMixin(RepositoryMixin(RestApplication)) {
   constructor(options: ApplicationConfig = {}) {
     super(options);
 
