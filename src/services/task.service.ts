@@ -19,10 +19,16 @@ export class TaskService {
         console.log(`Tasks: ${JSON.stringify(taskList)}`);
         const taskListResult: Array<Task> = await Promise.all(await taskList.map(async (task: Task) => {
             // Folder
-            const folder = await this.folderRepository.findById(task.folderid);
-
+            let folder = new Folder();
+            if (task.folderid) {
+                folder = await this.folderRepository.findById(task.folderid);
+            }
+            
             // Priority
-            const priority = await this.priorityRepository.findById(task.priorityid);
+            let priority = new Priority();
+            if (task.priorityid) {
+                priority = await this.priorityRepository.findById(task.priorityid);
+            }
             
             // setting names
             task.folderName = folder['name'];

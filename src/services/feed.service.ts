@@ -19,6 +19,7 @@ export class FeedService {
         const feedListResult: Feed[] = await Promise.all(await feedList.map(async (feed) => {
             const feedCriteriaStr = feed.criteria;
             const feedCriteriaObj = JSON.parse(feedCriteriaStr);
+            console.log(`Feed Criteria: ${JSON.stringify(feedCriteriaObj)}`)
             const filterBuilder = new FilterBuilder();
             const filter = filterBuilder
             .fields('id', 'name', 'description', 'criteria')
@@ -27,14 +28,14 @@ export class FeedService {
             .build();
             const tasks = await this.taskRepository.find(filter);
             feed.tasks = tasks;
-            console.log(JSON.stringify(tasks));
+            console.log(`Feed Task: ${JSON.stringify(tasks)}`);
 
             // count
             const whereBuilder = new WhereBuilder(feedCriteriaObj);
             const where = whereBuilder.build();
             const Count = await this.taskRepository.count(where);
             feed.taskCount = Count.count;
-            console.log(Count);
+            console.log(`Feed Task Count : ${JSON.stringify(Count)}`);
 
             return feed;
         }));
