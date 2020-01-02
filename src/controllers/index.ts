@@ -3,3 +3,7 @@ export * from './task.controller';
 export * from './folder.controller';
 export * from './priority.controller';
 export * from './feed.controller';
+export * from './product.controller';
+export * from './user.controller';
+export * from './product-category.controller';
+export * from './cart.controller';

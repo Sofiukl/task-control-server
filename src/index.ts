@@ -1,6 +1,6 @@
 import {TaskControlServerApplication} from './application';
 import {ApplicationConfig} from '@loopback/core';
-import {FolderService, TaskService} from './services';
+import {FolderService, TaskService, ProductService} from './services';
 import { FeedService } from './services/feed.service';
 
 export {TaskControlServerApplication};
@@ -13,6 +13,7 @@ export async function main(options: ApplicationConfig = {}) {
   app.bind('FolderService').toClass(FolderService);
   app.bind('TaskService').toClass(TaskService);
   app.bind('FeedService').toClass(FeedService);
+  app.bind('ProductService').toClass(ProductService);
 
   const url = app.restServer.url;
   console.log(`Server is running at ${url}`);
