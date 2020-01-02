@@ -6,3 +6,5 @@ export * from './product.repository';
 export * from './user.repository';
 export * from './cart.repository';
 export * from './product-category.repository';
+export * from './order.repository';
+export * from './transaction.repository';

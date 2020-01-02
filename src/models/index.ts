@@ -8,3 +8,5 @@ export * from './feed.model';
 export * from './product.model';
 export * from './cart.model';
 export * from "./product-category.model";
+export * from './order.model';
+export * from './transaction.model';
