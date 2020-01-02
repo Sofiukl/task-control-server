@@ -17,9 +17,9 @@ export class Order extends Entity {
   })
   name: string;
 
-  constructor(data?: Partial<Product>) {
+  constructor(data?: Partial<Order>) {
     super(data);
-    const product: any = this.toObject();
-    product['id'] = uuidv4();
+    const order: any = this.toObject();
+    order['id'] = uuidv4();
   }
 }
